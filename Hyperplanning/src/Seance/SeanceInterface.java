@@ -10,5 +10,7 @@ package Seance;
  * @author Antoine
  */
 public interface SeanceInterface {
-    
+    public void ajouter(Seance seance);
+    public void supprimer(Seance seance);
+    public void modifier(Seance seance);
 }

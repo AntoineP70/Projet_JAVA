@@ -10,5 +10,9 @@ package User;
  * @author Antoine
  */
 public interface UserInterface {
+    public void ajouter(Etudiant e);
+    public void ajouter(Professeur p);
+    public void modifier(Etudiant e);
+    public void modifier(Professeur p);
     
 }

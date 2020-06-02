@@ -11,4 +11,5 @@ package Seance;
  */
 public class SeanceImp implements SeanceInterface {
     
+    
 }
