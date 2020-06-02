@@ -5,13 +5,13 @@
  */
 package Data;
 
-import java.util.*;
-
 /**
  *
  * @author Antoine
  */
-public class Promotions {
-    private ArrayList<Groupes> m_groupes;
-    public String m_nom;
+public class Creneau {
+    private int m_semaine;
+    private int m_date;
+    private int heure_D;
+    private int heure_F;
 }

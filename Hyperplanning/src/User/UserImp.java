@@ -9,6 +9,6 @@ package User;
  *
  * @author Antoine
  */
-public class UserImp {
+public class UserImp implements UserInterface {
     
 }

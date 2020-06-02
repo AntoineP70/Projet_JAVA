@@ -5,10 +5,13 @@
  */
 package User;
 
+import Data.Groupes;
+
 /**
  *
  * @author Antoine
  */
-public class Etudiant {
-    
+public class Etudiant extends User{
+    private int m_num;
+    private Groupes m_group;
 }

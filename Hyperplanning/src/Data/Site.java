@@ -5,10 +5,14 @@
  */
 package Data;
 
+import java.util.*;
+
 /**
  *
  * @author Antoine
  */
 public class Site {
-    
+    private int m_ID;
+    private String m_nom;
+    private ArrayList<Salle> m_salles;
 }

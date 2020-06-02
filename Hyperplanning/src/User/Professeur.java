@@ -5,10 +5,13 @@
  */
 package User;
 
+import Seance.Seance;
+import java.util.ArrayList;
+
 /**
  *
  * @author Antoine
  */
-public class Professeur {
-    
+public class Professeur extends User{
+    private ArrayList<Seance> m_cours;
 }

@@ -9,6 +9,6 @@ package Seance;
  *
  * @author Antoine
  */
-public class SeanceImp {
+public class SeanceImp implements SeanceInterface {
     
 }

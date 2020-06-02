@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Data;
-
-import java.util.*;
+package Seance;
 
 /**
  *
  * @author Antoine
  */
-public class Promotions {
-    private ArrayList<Groupes> m_groupes;
-    public String m_nom;
+public interface SeanceInterface {
+    
 }

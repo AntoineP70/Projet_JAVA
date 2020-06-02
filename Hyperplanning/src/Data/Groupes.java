@@ -5,10 +5,15 @@
  */
 package Data;
 
+import User.Etudiant;
+import java.util.*;
+
 /**
  *
  * @author Antoine
  */
-public class Groupes {
-    
+public class Groupes{
+    private ArrayList<Etudiant> m_etudiants;
+    private Promotions promo;
+    public String m_nom;
 }

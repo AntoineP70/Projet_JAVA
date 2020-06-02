@@ -10,5 +10,10 @@ package User;
  * @author Antoine
  */
 public class User {
-    
+    private int m_ID;
+    private String m_email;
+    private String m_password;
+    private String nom;
+    private String prenom;
+    private boolean m_droit;
 }
