@@ -5,6 +5,8 @@
  */
 package hyperplanning;
 
+
+
 /**
  *
  * @author Antoine
@@ -16,6 +18,7 @@ public class Hyperplanning {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new View.LogIn().setVisible(true);
     }
     
 }
