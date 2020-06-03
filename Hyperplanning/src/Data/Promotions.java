@@ -14,4 +14,6 @@ import java.util.*;
 public class Promotions {
     private ArrayList<Groupes> m_groupes;
     public String m_nom;
+    
+    
 }
