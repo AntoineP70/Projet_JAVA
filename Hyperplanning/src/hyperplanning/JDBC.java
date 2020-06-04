@@ -197,14 +197,10 @@ public class JDBC {
 
             // Concatener les champs de la ligne separes par ,
             for (int i = 1; i < nbColonne; i++) {
-                champs = champs + "," + rset.getString(i + 1);
+                liste.add(rset.getString(i));
             }
 
-            // ajouter un "\n" à la ligne des champs
-            champs = champs + "\n";
-
-            // ajouter les champs de la ligne dans l'ArrayList
-            liste.add(champs);
+            liste.add("\n");
         }
 
         // Retourner l'ArrayList

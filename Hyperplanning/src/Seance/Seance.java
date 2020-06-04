@@ -7,6 +7,7 @@ package Seance;
 
 import Data.*;
 import User.Professeur;
+import User.User;
 
 /**
  *
@@ -23,16 +24,16 @@ public class Seance  {
     private Groupes m_classe;
     
     
-    public Seance(int id,String nom,String type,int semaine,int date, int heureD,int heureF, boolean etat,Salle salle,Professeur prof,Groupes classe)
+    public Seance(int id,String nom,String type,Creneau cr, boolean etat,Salle salle,User prof,Groupes classe)
     {
-        Creneau cr = new Creneau(semaine,date,heureD,heureF);
+   
         m_ID = id;
         m_nom = nom;
         m_type = type;
         m_creneau = cr;
         m_etat = etat;
         m_salle = salle;
-        m_prof = prof;
+        m_prof = (Professeur) prof;
         m_classe = classe;
     }
      

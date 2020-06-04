@@ -14,4 +14,12 @@ public class Salle {
     private String m_nom;
     private int m_capacité;
     private Site m_site;
+    
+    public Salle(int ID,String nom,int cap,Site site)
+    {
+        m_ID =ID;
+        m_nom =nom;
+        m_capacité = cap;
+        m_site = site;
+    }
 }

@@ -5,6 +5,8 @@
  */
 package hyperplanning;
 
+import User.User;
+
 
 
 /**
@@ -16,9 +18,12 @@ public class Hyperplanning {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         // TODO code application logic here
-        new View.LogIn().setVisible(true);
+        User user = null;
+        new  View.LogIn().setVisible(true);
+        
     }
     
 }

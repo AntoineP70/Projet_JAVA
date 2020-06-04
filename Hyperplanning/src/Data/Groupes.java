@@ -14,6 +14,13 @@ import java.util.*;
  */
 public class Groupes{
     private ArrayList<Etudiant> m_etudiants;
+    private int m_ID;
+    private String m_nom;
     private Promotions promo;
-    public String m_nom;
+    
+    public Groupes(int id,String nom)
+    {
+        m_ID = id;
+        m_nom = nom;
+    }
 }
