@@ -23,4 +23,9 @@ public class Groupes{
         m_ID = id;
         m_nom = nom;
     }
+    
+    public String getNom()
+    {
+        return m_nom;
+    }
 }

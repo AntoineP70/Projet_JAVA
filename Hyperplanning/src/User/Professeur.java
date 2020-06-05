@@ -19,4 +19,9 @@ public class Professeur extends User{
         super(id, email, mdp, nom, prenom, droit);
         m_cours = cours;
     }
+    
+    public ArrayList<Seance> getCours()
+    {
+        return m_cours;
+    }
 }

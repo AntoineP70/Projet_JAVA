@@ -22,4 +22,9 @@ public class Salle {
         m_capacité = cap;
         m_site = site;
     }
+    
+    public String getNom()
+    {
+        return m_nom;
+    }
 }

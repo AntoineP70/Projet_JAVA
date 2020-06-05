@@ -196,11 +196,9 @@ public class JDBC {
             champs = rset.getString(1); // ajouter premier champ
 
             // Concatener les champs de la ligne separes par ,
-            for (int i = 1; i < nbColonne; i++) {
+            for (int i = 1; i <= nbColonne; i++) {
                 liste.add(rset.getString(i));
             }
-
-            liste.add("\n");
         }
 
         // Retourner l'ArrayList

@@ -10,7 +10,7 @@ package User;
  * @author Antoine
  */
 public class User {
-    private int m_ID;
+    private int m_ID = 0;
     private String m_email;
     private String m_password;
     private String m_nom;
@@ -26,4 +26,10 @@ public class User {
         m_prenom = prenom;
         m_droit = droit;
     }
+    
+    public int getId()
+    {
+        return m_ID;
+    }
+        
 }
