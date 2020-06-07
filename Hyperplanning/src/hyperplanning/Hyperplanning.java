@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hyperplanning;
 
 import Seance.Seance;
-import User.Etudiant;
-import User.Professeur;
-import User.User;
-import java.awt.event.ActionEvent;
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
-
-
 
 /**
  *
@@ -23,33 +14,18 @@ public class Hyperplanning {
     /**
      * @param args the command line arguments
      */
-    
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ParseException {
         // TODO code application logic here
-        Etudiant UsingE;
-        Professeur UsingP;
-        View.LogIn Loged = null;
-        Loged = new  View.LogIn();
-        
-        while(Loged.userE==null && Loged.userP==null)
-        {
-            Loged.setVisible(true);
-           
-            if(Loged.userE!=null)
-            {
-                System.out.println(Loged.userE.getNum());
-                
-            }
-            if(Loged.userP!=null)
-            {
-                ArrayList<Seance> cours = Loged.userP.getCours();
+        View.LogIn Loged = null; 
+        Loged = new  View.LogIn(); // récupération des informations de l'utilisateur
 
-                
-            }
-            
+        while(Loged.user==null) //boucle d'attente rentrée email et password
+        {
+            Loged.setVisible(true);   
         }
-        
-        
-    }
-    
+
+        ArrayList<Seance> edt = null;
+        edt = Loged.user.getEDT(); // récupération de l'emploi du temps lié à l'utilisateur
+        View.Window EDT = new View.Window(edt,Loged.user);   //affichage EDT
+    } 
 }

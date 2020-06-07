@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Antoine
+ * @author Mr. Segado / Antoine
  */
 public class JDBC {
     /**

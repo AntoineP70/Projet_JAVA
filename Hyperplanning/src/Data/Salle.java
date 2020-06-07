@@ -13,7 +13,7 @@ public class Salle {
     private int m_ID;
     private String m_nom;
     private int m_capacité;
-    private Site m_site;
+    public Site m_site;
     
     public Salle(int ID,String nom,int cap,Site site)
     {

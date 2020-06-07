@@ -8,6 +8,7 @@ package Seance;
 import Data.*;
 import User.Professeur;
 import User.User;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -16,7 +17,7 @@ import java.util.Date;
  */
 public class Seance  {
     private int m_ID;
-    private String m_nom;
+    private String m_nom = "";
     private String m_type;
     private Date m_debut;
     private Date m_fin;
@@ -43,6 +44,23 @@ public class Seance  {
     public String getNom()
     {
         return m_nom;
+    }
+    
+    public Date getDebut()
+    {
+        return m_debut;
+    }
+    
+    public ArrayList<String> show()
+    {
+        ArrayList<String> aff = new ArrayList<> ();
+         aff.add(m_nom);
+         aff.add(m_type);
+         aff.add(m_prof.getNom());
+         aff.add(m_classe.getNom());
+         aff.add(m_salle.getNom());
+         aff.add(m_salle.m_site.getNom());
+        return aff;   
     }
      
     

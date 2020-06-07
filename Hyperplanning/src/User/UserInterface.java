@@ -5,6 +5,11 @@
  */
 package User;
 
+import Seance.Seance;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.ArrayList;
+
 /**
  *
  * @author Antoine
@@ -14,5 +19,5 @@ public interface UserInterface {
     public void ajouter(Professeur p);
     public void modifier(Etudiant e);
     public void modifier(Professeur p);
-    
+    public ArrayList<Seance> getEDT(int ID_user)throws SQLException, ParseException;
 }

@@ -20,4 +20,9 @@ public class Site {
         m_ID= ID;
         m_nom= nom;
     }
+    
+    public String getNom()
+    {
+        return m_nom;
+    }
 }
