@@ -1,0 +1,17 @@
+Bonjour,
+afin de profiter de l'expérience merci de vous connecter avec des identifiants
+déjà programmé comme :
+
+Pour un élève :
+email : test
+password : test
+
+Pour un Enseignant : 
+email : testProf
+password : testProf
+
+Nous avons mis à votre disposition un échantillon de cours. 
+Si vous désirez en rajouter, il faudra passer par la BDD. 
+Attention, afin qu'une seance puisse être correctement affichée, 
+il faut remplir tout les champs relatifs (prof,classe,type,...) 
+à cette séance.

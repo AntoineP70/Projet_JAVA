@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package User;
 
 import Seance.Seance;
@@ -49,9 +44,8 @@ public class User {
         return m_droit;
     }
     
-    public ArrayList<Seance> getEDT() throws SQLException, ParseException
+    public ArrayList<Seance> getEDT() throws SQLException, ParseException //récupération emploi du temps 
     {
-        System.out.println("Fonction 1    "  + m_ID);
         UserImp userImp = new UserImp();
         ArrayList<Seance> edt = userImp.getEDT(m_ID);
         return edt;

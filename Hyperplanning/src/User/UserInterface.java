@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package User;
 
 import Seance.Seance;
@@ -15,9 +10,9 @@ import java.util.ArrayList;
  * @author Antoine
  */
 public interface UserInterface {
-    public void ajouter(Etudiant e);
-    public void ajouter(Professeur p);
-    public void modifier(Etudiant e);
-    public void modifier(Professeur p);
-    public ArrayList<Seance> getEDT(int ID_user)throws SQLException, ParseException;
+    public void ajouter(Etudiant e);//ajouter à BDD un etudiant     --Pas implémenté--
+    public void ajouter(Professeur p);//ajouter à BDD un professeur --Pas implémenté--
+    public void modifier(Etudiant e);//modifié un étudiant          --Pas implémenté--
+    public void modifier(Professeur p);//modifié un professeur      --Pas implémenté--
+    public ArrayList<Seance> getEDT(int ID_user)throws SQLException, ParseException; //Return l'emploi du temps d'un utilisateur
 }

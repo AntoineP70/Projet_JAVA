@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 03 juin 2020 à 09:05
--- Version du serveur :  10.4.10-MariaDB
--- Version de PHP :  7.4.0
+-- Généré le :  Dim 07 juin 2020 à 19:33
+-- Version du serveur :  5.7.26
+-- Version de PHP :  7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -33,7 +33,16 @@ CREATE TABLE IF NOT EXISTS `cours` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Nom` char(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1235 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `cours`
+--
+
+INSERT INTO `cours` (`ID`, `Nom`) VALUES
+(1, 'POO java'),
+(3, 'Maths'),
+(4, 'Thermo');
 
 -- --------------------------------------------------------
 
@@ -47,6 +56,16 @@ CREATE TABLE IF NOT EXISTS `enseignant` (
   `ID_Cours` int(11) NOT NULL,
   KEY `ID_Utilisateur` (`ID_Utilisateur`,`ID_Cours`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `enseignant`
+--
+
+INSERT INTO `enseignant` (`ID_Utilisateur`, `ID_Cours`) VALUES
+(5, 1),
+(5, 2),
+(9, 4),
+(10, 3);
 
 -- --------------------------------------------------------
 
@@ -63,6 +82,16 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
   KEY `ID_Groupe` (`ID_Groupe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `etudiant`
+--
+
+INSERT INTO `etudiant` (`ID_Utilisateur`, `Numero`, `ID_Groupe`) VALUES
+(4, 2344, 1),
+(3, 666, 1),
+(6, 2532, 2),
+(7, 4648, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -76,7 +105,18 @@ CREATE TABLE IF NOT EXISTS `groupe` (
   `ID_Promotion` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `ID_Promotion` (`ID_Promotion`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `groupe`
+--
+
+INSERT INTO `groupe` (`ID`, `Nom`, `ID_Promotion`) VALUES
+(1, 'TD10', 1),
+(2, 'TD9', 3),
+(3, 'TD10', 3),
+(4, 'TD8', 3),
+(5, 'TD7', 3);
 
 -- --------------------------------------------------------
 
@@ -89,7 +129,18 @@ CREATE TABLE IF NOT EXISTS `promotion` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Nom` char(60) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8179 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `promotion`
+--
+
+INSERT INTO `promotion` (`ID`, `Nom`) VALUES
+(1, 'ING1'),
+(2, 'ING2'),
+(3, 'ING3'),
+(4, 'ING4'),
+(5, 'ING5');
 
 -- --------------------------------------------------------
 
@@ -105,7 +156,19 @@ CREATE TABLE IF NOT EXISTS `salle` (
   `ID_Site` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `ID_Site` (`ID_Site`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `salle`
+--
+
+INSERT INTO `salle` (`ID`, `Nom`, `Capacité`, `ID_Site`) VALUES
+(1, 'E009', 90, 1),
+(2, 'EM345', 12, 1),
+(3, 'P306', 40, 2),
+(4, 'C105', 55, 3),
+(5, 'P416', 40, 2),
+(6, 'EM412', 12, 1);
 
 -- --------------------------------------------------------
 
@@ -118,15 +181,25 @@ CREATE TABLE IF NOT EXISTS `seance` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Semaine` int(11) NOT NULL,
   `Date` date NOT NULL,
-  `Heure_Debut` time(6) NOT NULL,
-  `Heure_Fin` time(6) NOT NULL,
-  `Etat` int(11) NOT NULL,
+  `Heure_Debut` time NOT NULL,
+  `Heure_Fin` time NOT NULL,
+  `Etat` varchar(255) NOT NULL,
   `ID_Cours` int(11) NOT NULL,
   `ID_Type` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `ID_Cours` (`ID_Cours`),
   KEY `ID_Type` (`ID_Type`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `seance`
+--
+
+INSERT INTO `seance` (`ID`, `Semaine`, `Date`, `Heure_Debut`, `Heure_Fin`, `Etat`, `ID_Cours`, `ID_Type`) VALUES
+(1, 43, '2020-06-10', '08:00:00', '10:30:00', 'TRUE', 1, 1),
+(4, 0, '2020-06-16', '10:00:00', '12:00:00', 'true', 3, 1),
+(5, 0, '2020-06-17', '12:00:00', '13:00:00', 'true', 4, 2),
+(6, 0, '2020-06-18', '17:00:00', '18:45:00', 'true', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -142,6 +215,16 @@ CREATE TABLE IF NOT EXISTS `seance_enseignants` (
   KEY `ID_Enseignant` (`ID_Enseignant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `seance_enseignants`
+--
+
+INSERT INTO `seance_enseignants` (`ID_Seance`, `ID_Enseignant`) VALUES
+(1, 5),
+(4, 9),
+(6, 9),
+(5, 10);
+
 -- --------------------------------------------------------
 
 --
@@ -155,6 +238,16 @@ CREATE TABLE IF NOT EXISTS `seance_groupes` (
   KEY `ID_Seance` (`ID_Seance`),
   KEY `ID_Groupe` (`ID_Groupe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `seance_groupes`
+--
+
+INSERT INTO `seance_groupes` (`ID_Seance`, `ID_Groupe`) VALUES
+(1, 1),
+(4, 1),
+(5, 1),
+(6, 1);
 
 -- --------------------------------------------------------
 
@@ -170,6 +263,16 @@ CREATE TABLE IF NOT EXISTS `seance_salles` (
   KEY `ID_Salle` (`ID_Salle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `seance_salles`
+--
+
+INSERT INTO `seance_salles` (`ID_Seance`, `ID_Salle`) VALUES
+(1, 1),
+(4, 1),
+(5, 4),
+(6, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -182,7 +285,16 @@ CREATE TABLE IF NOT EXISTS `site` (
   `Nom` char(255) NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `ID` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `site`
+--
+
+INSERT INTO `site` (`ID`, `Nom`) VALUES
+(1, 'E1'),
+(2, 'E2'),
+(3, 'E3');
 
 -- --------------------------------------------------------
 
@@ -197,6 +309,14 @@ CREATE TABLE IF NOT EXISTS `type_cours` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `type_cours`
+--
+
+INSERT INTO `type_cours` (`ID`, `Nom`) VALUES
+(1, 'CM'),
+(2, 'TP');
+
 -- --------------------------------------------------------
 
 --
@@ -207,12 +327,26 @@ DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Email` varchar(255) NOT NULL,
-  `Passwd` char(60) NOT NULL,
-  `Nom` char(60) NOT NULL,
-  `Prenom` char(60) NOT NULL,
+  `Passwd` varchar(255) NOT NULL,
+  `Nom` varchar(255) NOT NULL,
+  `Prenom` varchar(255) NOT NULL,
   `Droit` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`ID`, `Email`, `Passwd`, `Nom`, `Prenom`, `Droit`) VALUES
+(3, 'antoine.peridon@edu.ece.fr', 'Antoine', 'Peridon', 'Antoine', 1),
+(4, 'test', 'test', 'test', 'test', 1),
+(5, 'testProf', 'testProf', 'testProf', 'testProf', 2),
+(6, 'helene.clavelier@edu.ece.fr', 'Helene', 'Clavelier', 'Helene', 1),
+(7, 'jeanne.roques@edu.ece.fr', 'Jeanne', 'Roques', 'Jeanne', 1),
+(8, 'jps@inseec.com', 'JPS', 'Segado', 'JP', 2),
+(9, 'mouhali@edu.ece.fr', 'Mouhali', 'Mouhali', 'Waleed', 2),
+(10, 'bianchini@inseec.com', 'Bianchini', 'Bianchini', 'jesaisplus', 2);
 
 --
 -- Contraintes pour les tables déchargées

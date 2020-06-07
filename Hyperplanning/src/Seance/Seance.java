@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Seance;
 
 import Data.*;
 import User.Professeur;
-import User.User;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -51,15 +45,15 @@ public class Seance  {
         return m_debut;
     }
     
-    public ArrayList<String> show()
+    public ArrayList<String> show() //return toutes les infos relatives à la séance pour affichage dans EDT
     {
         ArrayList<String> aff = new ArrayList<> ();
-         aff.add(m_nom);
-         aff.add(m_type);
-         aff.add(m_prof.getNom());
-         aff.add(m_classe.getNom());
-         aff.add(m_salle.getNom());
-         aff.add(m_salle.m_site.getNom());
+        aff.add(m_nom);
+        aff.add(m_type);
+        aff.add(m_prof.getNom());
+        aff.add(m_classe.getNom());
+        aff.add(m_salle.getNom());
+        aff.add(m_salle.m_site.getNom());
         return aff;   
     }
      
